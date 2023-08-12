@@ -34,8 +34,10 @@ jobs:
 
       - name: Build and Push Docker Image
         uses: docker/build-push-action@v3
+        working-directory: rust
         with:
           platforms: linux/amd64,linux/arm64/v8
+          file: Dockerfile-leptos.builder-musl
           context: .
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
