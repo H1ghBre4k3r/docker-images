@@ -1,9 +1,6 @@
 FROM rustlang/rust:nightly-alpine3.17
 LABEL org.opencontainers.image.source="https://github.com/pesca-dev/docker-images"
 
-# RUN rustup toolchain install nightly
-# RUN rustup default nightly
-
 RUN apk update && \
     apk add --no-cache bash binaryen gcc git g++ libc-dev make npm libressl-dev protobuf-dev protoc
 
